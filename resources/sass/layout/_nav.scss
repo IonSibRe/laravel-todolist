@@ -1,0 +1,41 @@
+.navbar {
+    padding: 0.5rem 0;
+    background-color: #f4f4f4;
+
+    .navbar-inner {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-logo {
+        font-size: $h4-size;
+        color: $text-dark;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .navbar-auth-user-wrap {
+        display: flex;
+        align-items: center;
+
+        .navbar-auth-user-text {
+            font-size: $p-size + 0.1rem;
+            margin-right: 2rem;
+        }
+    }
+
+    .navbar-auth-link {
+        font-size: $nav-link-size;
+        color: $text-dark;
+        transition: 0.1s color ease-in-out;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}

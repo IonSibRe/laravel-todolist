@@ -1,0 +1,54 @@
+// ==================== Default Resets ====================
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// ==================== Variables ====================
+// Layout
+$container-width: 768px;
+
+// Typography
+$h1-size: 3rem;
+$h2-size: 2.5rem;
+$h3-size: 2rem;
+$h4-size: 1.75rem;
+
+$p-size: 1rem;
+$nav-link-size: 1.1rem;
+
+// Colors
+$primary-color: rgb(18, 175, 236);
+
+$text-light: #fff;
+$text-dark: #333;
+
+// ==================== Mixins ====================
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin container-center {
+    width: $container-width;
+    margin: 0 auto;
+}

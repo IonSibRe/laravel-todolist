@@ -1,0 +1,42 @@
+.main-container {
+    @include container-center;
+    margin-top: 4rem;
+}
+
+.main-title {
+    text-align: center;
+    font-size: $h1-size;
+    color: $text-dark;
+}
+
+.todo-input-wrap {
+    margin-top: 1rem;
+}
+
+.todo-input-form {
+    width: 100%;
+    display: flex;
+    border: 1px solid #ccc;
+}
+
+.todo-input-title {
+    margin-bottom: 0.5rem;
+}
+
+.todo-input-input {
+    flex: 8;
+    font-size: $p-size;
+    padding: 0.25rem;
+    border: none;
+    outline: none;
+}
+
+.todo-input-btn {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: $p-size;
+    color: $text-light;
+    background-color: $primary-color;
+    border: none;
+    cursor: pointer;
+}
