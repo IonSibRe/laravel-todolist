@@ -39,3 +39,9 @@
         }
     }
 }
+
+@media screen and (max-width: 425px) {
+    .navbar .navbar-auth-user-wrap .navbar-auth-user-text {
+        margin-right: 1rem;
+    }
+}

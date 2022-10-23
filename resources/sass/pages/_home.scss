@@ -1,3 +1,4 @@
+// ================== Home Layout ==================
 .main-container {
     @include container-center;
     margin-top: 4rem;
@@ -9,34 +10,109 @@
     color: $text-dark;
 }
 
+// ================== Input Form ==================
 .todo-input-wrap {
     margin-top: 1rem;
+
+    .todo-input-title {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .todo-input-form {
+        width: 100%;
+        display: flex;
+        border: 1px solid #ccc;
+    }
+
+    .todo-input-input {
+        flex: 8;
+        font-size: $p-size;
+        padding: 0.25rem;
+        border: none;
+        outline: none;
+    }
+
+    .todo-input-btn {
+        flex: 1;
+        padding: 0.5rem;
+        font-size: $p-size;
+        color: $text-light;
+        background-color: $primary-color;
+        border: none;
+        cursor: pointer;
+    }
 }
 
-.todo-input-form {
-    width: 100%;
-    display: flex;
+// ================== Todos List ==================
+.todo-task-list {
+    margin-top: 3rem;
+    padding: 1rem;
     border: 1px solid #ccc;
+
+    .todo-task-item {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .todo-task-item-text-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .todo-task-item-title {
+                flex: 9;
+                font-size: 1.25rem;
+            }
+
+            .todo-task-item-actions-wrap {
+                flex: 1;
+                text-align: right;
+            }
+
+            .todo-task-item-btn {
+                @include btn-reset;
+            }
+
+            .todo-task-item-btn-delete {
+                color: #f00;
+                margin-right: 0.5rem;
+            }
+
+            .todo-task-item-btn-edit {
+                color: rgb(16, 189, 31);
+                margin-right: 0.5rem;
+            }
+        }
+    }
 }
 
-.todo-input-title {
-    margin-bottom: 0.5rem;
-}
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: 95%;
+    }
 
-.todo-input-input {
-    flex: 8;
-    font-size: $p-size;
-    padding: 0.25rem;
-    border: none;
-    outline: none;
-}
+    .main-title {
+        font-size: $h1-size - 0.5rem;
+    }
 
-.todo-input-btn {
-    flex: 1;
-    padding: 0.5rem;
-    font-size: $p-size;
-    color: $text-light;
-    background-color: $primary-color;
-    border: none;
-    cursor: pointer;
+    .todo-input-wrap .todo-input-title {
+        font-size: 1.25rem;
+    }
+
+    .todo-task-list .todo-task-item .todo-task-item-text-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .todo-task-list
+        .todo-task-item
+        .todo-task-item-text-wrap
+        .todo-task-item-title {
+        margin-bottom: 0.5rem;
+    }
 }
