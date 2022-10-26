@@ -22,4 +22,22 @@ class TaskController extends Controller
 
         return redirect('/');
     }
+
+    // Edit Task
+    public function update(Request $request, Task $task) {
+        $formFields = $request->validate([
+            'title' => ['required', "min:3"],
+        ]);
+
+        $task->update($formFields);
+
+        return redirect('/');
+    }
+
+    // Delete Task
+    public function destroy(Task $task) {
+        $task->delete();
+
+        return redirect("/");
+    }
 }

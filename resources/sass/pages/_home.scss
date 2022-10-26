@@ -64,14 +64,43 @@
             justify-content: space-between;
             align-items: center;
 
+            // Either title
             .todo-task-item-title {
                 flex: 9;
                 font-size: 1.25rem;
             }
 
+            // Or Edit Form
+            .todo-input-edit-form {
+                flex: 9;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid #ccc;
+
+                .todo-input-edit-field {
+                    flex: 8;
+                    font-size: $p-size;
+                    padding: 0.25rem;
+                    border: none;
+                    outline: none;
+                }
+
+                .todo-input-edit-btn {
+                    flex: 1;
+                    padding: 0.25rem;
+                    font-size: $p-size;
+                    color: $text-light;
+                    background-color: $primary-color;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+
             .todo-task-item-actions-wrap {
                 flex: 1;
-                text-align: right;
+                display: flex;
+                justify-content: flex-end;
             }
 
             .todo-task-item-btn {

@@ -17,12 +17,22 @@
             @foreach ($tasks as $task)
             <div class="todo-task-item">
                 <div class="todo-task-item-text-wrap">
+                    <form action="/tasks/edit/{{$task->id}}" method="POST" class="todo-input-edit-form hide">
+                        @csrf
+                        @method("PUT")
+                        <input class="todo-input-edit-field" type="text" value="{{$task->title}}" name="title">
+                        <button class="todo-input-edit-btn" type="submit">Edit</button>
+                    </form>
                     <p class="todo-task-item-title">{{$task->title}}</p>
                     <div class="todo-task-item-actions-wrap">
-                        <button class="todo-task-item-btn todo-task-item-btn-delete">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                        <button class="todo-task-item-btn todo-task-item-btn-edit">
+                        <form action="/tasks/{{$task->id}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button class="todo-task-item-btn todo-task-item-btn-delete" type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                        <button class="todo-task-item-btn todo-task-item-btn-edit" type="button">
                             <i class="fa-solid fa-pencil"></i>
                         </button>
                     </div>

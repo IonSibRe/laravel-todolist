@@ -41,6 +41,11 @@ $primary-color: rgb(18, 175, 236);
 $text-light: #fff;
 $text-dark: #333;
 
+// ==================== Custom Classes ====================
+.hide {
+    display: none !important;
+}
+
 // ==================== Mixins ====================
 @mixin flex-center {
     display: flex;
@@ -57,4 +62,5 @@ $text-dark: #333;
     background-color: transparent;
     border: none;
     outline: none;
+    cursor: pointer;
 }
