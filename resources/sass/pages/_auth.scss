@@ -1,0 +1,48 @@
+.auth-container {
+    margin: 15vh auto 0 auto;
+    width: 425px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+
+    .auth-title {
+        margin-bottom: 1rem;
+        font-size: $h2-size - 0.75rem;
+        color: $text-dark;
+    }
+
+    .auth-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        .auth-label {
+            font-size: $p-size;
+            margin-bottom: 0.25rem;
+        }
+
+        .auth-input {
+            padding: 0.25rem;
+            font-size: $p-size;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+    }
+
+    .auth-submit-btn {
+        @include btn-reset;
+        padding: 0.5rem 1rem;
+        font-size: $p-size;
+        background-color: $primary-color;
+        color: $text-light;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .auth-container {
+        width: 95%;
+    }
+}
