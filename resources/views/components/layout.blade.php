@@ -21,14 +21,20 @@
                 </a>
             </div>
             <div class="navbar-auth-wrap">
-                {{-- <div class="navbar-auth-user-wrap">
-                    <p class="navbar-auth-user-text">Welcome user1</p>
-                    <a href="#" class="navbar-auth-link navbar-auth-user-logout">Logout</a>
-                </div> --}}
+                @auth
+                <div class="navbar-auth-user-wrap">
+                    <p class="navbar-auth-user-text">Welcome {{auth()->user()->username}}</p>
+                    <form action="/users/logout" method="POST">
+                        @csrf
+                        <button type="submit" class="navbar-auth-link navbar-auth-user-logout">Logout</button>
+                    </form>
+                </div>
+                @else
                 <div class="navbar-auth-guest-wrap">
                     <a href="/users/register" class="navbar-auth-link navbar-auth-user-login">Register</a>
                     <a href="/users/login" class="navbar-auth-link navbar-auth-user-login">Login</a>
                 </div>
+                @endauth
             </div>
         </div>
     </nav>

@@ -46,6 +46,10 @@
             margin: 0;
         }
     }
+
+    .navbar-auth-user-logout {
+        @include btn-reset;
+    }
 }
 
 @media screen and (max-width: 425px) {

@@ -39,6 +39,12 @@
             opacity: 0.9;
         }
     }
+
+    .auth-error {
+        margin-top: 0.25rem;
+        font-size: $p-size;
+        color: #f00;
+    }
 }
 
 @media screen and (max-width: 425px) {
