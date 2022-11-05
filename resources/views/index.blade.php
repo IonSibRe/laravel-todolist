@@ -13,6 +13,10 @@
             </form>
         </div>
 
+
+        @if (count($tasks) == 0)
+        <p class="todo-no-tasks">No tasks found</p>
+        @else
         <div class="todo-task-list">
             @foreach ($tasks as $task)
             <div class="todo-task-item">
@@ -42,5 +46,6 @@
             </div>
             @endforeach
         </div>
+        @endif
     </div>
 </x-layout>

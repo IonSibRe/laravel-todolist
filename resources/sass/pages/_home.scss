@@ -45,6 +45,11 @@
 }
 
 // ================== Todos List ==================
+.todo-no-tasks {
+    margin-top: 1rem;
+    font-size: $p-size;
+}
+
 .todo-task-list {
     margin-top: 3rem;
     padding: 1rem;
