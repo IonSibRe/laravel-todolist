@@ -25,6 +25,7 @@
                     </form>
                     <p class="todo-task-item-title">{{$task->title}}</p>
                     <div class="todo-task-item-actions-wrap">
+                        @auth
                         <form action="/tasks/{{$task->id}}" method="POST">
                             @csrf
                             @method("DELETE")
@@ -35,6 +36,7 @@
                         <button class="todo-task-item-btn todo-task-item-btn-edit" type="button">
                             <i class="fa-solid fa-pencil"></i>
                         </button>
+                        @endauth
                     </div>
                 </div>
             </div>

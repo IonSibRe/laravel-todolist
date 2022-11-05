@@ -9,7 +9,7 @@ class TaskController extends Controller
 {
     // Show all tasks
     public function index() {
-        return view("index", ["tasks" => Task::latest()->get()]);
+        return view("index", ["tasks" => auth()->user()->tasks()->latest()->get()]);
     }
 
     // Store Task
@@ -17,6 +17,8 @@ class TaskController extends Controller
         $formFields = $request->validate([
             'title' => ['required', "min:3"],
         ]);
+
+        $formFields["user_id"] = auth()->id();
 
         Task::create($formFields);
 

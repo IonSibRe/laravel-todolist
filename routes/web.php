@@ -24,19 +24,23 @@ use App\Http\Controllers\UserController;
 // update - Update task
 // destroy - Delete task  
 
-Route::get('/', [TaskController::class, "index"]);
+// Get all users tasks
+Route::get('/', [TaskController::class, "index"])->middleware("auth");
 
-Route::post("/tasks", [TaskController::class, "store"]);
+// Create a task
+Route::post("/tasks", [TaskController::class, "store"])->middleware("auth");
 
-Route::put("/tasks/edit/{task}", [TaskController::class, "update"]);
+// Update task
+Route::put("/tasks/edit/{task}", [TaskController::class, "update"])->middleware("auth");
 
-Route::delete("/tasks/{task}", [TaskController::class, "destroy"]);
+// Delete Task
+Route::delete("/tasks/{task}", [TaskController::class, "destroy"])->middleware("auth");
 
 // Show Register Page
 Route::get("/users/register", [UserController::class, "create"]);
 
 // Show Login Page
-Route::get("/users/login", [UserController::class, "login"]);
+Route::get("/users/login", [UserController::class, "login"])->name("login");
 
 // Register User
 Route::post("/users/store", [UserController::class, "store"]);
@@ -44,4 +48,4 @@ Route::post("/users/store", [UserController::class, "store"]);
 // Login User
 Route::post("/users/signin", [UserController::class, "signin"]);
 
-Route::post("/users/logout", [UserController::class, "logout"]);
+Route::post("/users/logout", [UserController::class, "logout"])->middleware("auth");
